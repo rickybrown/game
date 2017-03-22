@@ -1,0 +1,74 @@
+body {
+	font-family: "Segoe UI", Frutiger, "Frutiger Linotype", "Dejavu Sans", "Helvetica Neue", Arial, sans-serif;
+}
+* {
+  -webkit-touch-callout:none;
+  -webkit-user-select:none;
+  -moz-user-select:none;
+  -ms-user-select:none;
+  user-select:none;
+}
+input, textarea {
+  -webkit-touch-callout:default;
+  -webkit-user-select:text;
+  -moz-user-select:text;
+  -ms-user-select:text;
+  user-select:text;
+}
+.clickable{
+	cursor:pointer;
+}
+.flip{
+  -moz-transform: scaleX(-1);
+  -o-transform: scaleX(-1);
+  -webkit-transform: scaleX(-1);
+  transform: scaleX(-1);
+  filter: FlipH;
+  -ms-filter: "FlipH";
+}
+
+
+.score-tables {
+	width:450px;
+	margin:20px auto;
+	& h1 {
+		font-size:36px;
+		text-align:center;
+	}
+	& h3 {
+		font-size: 22px;
+    margin: 20px 0;
+    border-bottom: 1px solid black;
+    padding-bottom: 5px;
+	}
+	& div {
+		margin-bottom:20px;
+		& table {
+			width:100%;
+			margin-bottom:50px;
+			& th {
+				font-weight:bold;
+				padding-bottom:10px;
+			}
+			& td {
+				padding:2px 0;
+				white-space: nowrap;
+				overflow:hidden;
+			}
+			& th, & td {
+				text-align:center;
+				width:20%;
+			}
+			& th:first-child, & td:first-child {
+				text-align:left;
+				width:40%!important;
+			}
+			& th:last-child, & td:last-child {
+				text-align:right;
+			}
+			& td:last-child {
+				cursor:pointer;
+			}
+		}
+	}
+}

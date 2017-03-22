@@ -1,0 +1,38 @@
+.arch-diagram{
+	font-family: "Segoe UI", Frutiger, "Frutiger Linotype", "Dejavu Sans", "Helvetica Neue", Arial, sans-serif;
+	position:fixed;
+	top:15vh;
+	left:30vw;
+	>svg{
+		width:70vw;
+		height:85vh;
+		.time-left{
+			fill:#ffffff;
+			x:100px;
+			y:100px;
+		}
+	}
+}
+.diagram-4 {
+	display:none;
+}
+.diagram-41 {
+	cursor:pointer;
+}
+.diagram-25 {
+	fill:#85bf1f;
+}
+.diagram_ids{
+	text-align:center;
+	font-size: 14px;
+	font-weight:500;
+	fill:#555;
+}
+.die{
+	-webkit-transition: all 1s ease-in-out;
+  -moz-transition: all 1s ease-in-out;
+  -o-transition: all 1s ease-in-out;
+  transition: all 1s ease-in-out;
+	fill:#777;
+	fill-opacity:100;
+}

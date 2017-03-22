@@ -1,0 +1,20 @@
+.console{
+	top:15vh;
+	position:fixed;
+	>svg{
+		width:30vw;
+		height:85vh;
+		.score-list{
+			fill:#fff;
+			&.scores{
+				overflow:auto;
+			}
+			&.head{
+				text-decoration:underline;
+			}
+		}
+	}
+	.gameactive{
+		transform:translateY(111%);
+	}
+}

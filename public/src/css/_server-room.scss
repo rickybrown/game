@@ -1,0 +1,198 @@
+.server-room{
+	position:fixed;
+	top:15vh;
+	left:30vw;
+	height:85vh;
+	>svg{
+		width:70vw;
+		height:85vh;
+		.time-left{
+			fill:#ffffff;
+			x:100px;
+			y:100px;
+			z-index:5000;
+			position:absolute;
+		}
+	}
+	.server-rack{
+		position:absolute;
+		bottom:15%;
+		left:25%;
+		height:40vh;
+		@include flex-wrap(wrap);
+		@include flexbox;
+		@include flex-direction(column-reverse);
+		@include align-items(flex-end);
+		>div{
+			width:7.5vh;
+			height:7.5vh;
+			>img{
+				animation: 1.5s linear fade-in;
+			}
+		}
+	}
+	.flying{
+	 	transition:3s linear;
+	 	position:absolute;
+	 	width:7.5vh;
+	 	.cloud{
+	 		display:block;
+	 		position:absolute;
+	 		bottom:0;
+	 		left:0;
+	 		width:13.5vh;
+	 		&:first-child{
+	 			z-index:-8;
+	 		}
+	 		&:last-child{
+	 			z-index:12;
+	 		}
+	 	}
+	}
+	.falling{
+	 	position:absolute;
+	 	width:7.5vh;
+	 	animation:1s linear flicker;
+	 	opacity:0;
+	 	img:nth-child(2){
+			opacity:0;
+			transition:none;
+		}
+		.cloud{
+	 		display:block;
+	 		position:absolute;
+	 		bottom:0;
+	 		left:0;
+	 		animation:150ms linear pop;
+	 		opacity:0;
+	 		&:first-child{
+	 			z-index:-8;
+	 		}
+	 		&:last-child{
+	 			z-index:12;
+	 		}
+	 	}
+	};
+	.dead{
+		display:none;
+	}
+	.game-over{
+		fill:#fff;
+		opacity:0;
+		animation:5s linear flash;
+	}
+	.count-down{
+		font-family:'Press Start 2P';
+		z-index:900;
+		font-size:12vh;
+		position:absolute;
+		top:37%;
+		left:45%;
+		color:white;
+	}
+}
+@keyframes flash{
+	0%{opacity:0;}
+	10%{opacity:1;}
+	20%{opacity:0;}
+	30%{opacity:1;}
+	40%{opacity:0;}
+	50%{opacity:1;}
+	100%{opacity:1;}
+}
+@keyframes fade-in{
+	0%{opacity:0;}
+	100%{opacity:1;}
+}
+@keyframes pop{
+	0%{width:13.5vh;opacity:.6;}
+	100%{width:17vh;opacity:0;}
+}
+@keyframes flicker{
+	0%{opacity:.9;}
+	5%{opacity:.1;}
+	10%{opacity:.9;}
+	20%{opacity:.1;}
+	25%{opacity:.9;}
+	30%{opacity:.1;}
+	35%{opacity:.9;}
+	40%{opacity:.1;}
+	45%{opacity:.9;}
+	50%{opacity:1;}
+	55%{opacity:.9;}
+	60%{opacity:.1;}
+	65%{opacity:.9;}
+	70%{opacity:.1;}
+	75%{opacity:.9;}
+	80%{opacity:.1;}
+	90%{opacity:.9;}
+	93%{opacity:.1;}
+	96%{opacity:.9;}
+	100%{opacity:1;}
+}
+@keyframes flash-in{
+	0%{opacity:0;}
+	99%{opacity:0;}
+	100%{opacity:1;}
+}
+
+.welcome_screen {
+	position:fixed;
+	z-index:1000;
+	width:60vw;
+	height:55vh;
+	top:20vh;
+	left:37vw;
+}
+.gameover_screen{
+	position:fixed;
+	z-index:1000;
+	width:55vw;
+	height:35vh;
+	top:22vh;
+	left:37vw;
+	animation:4.5s linear flash-in;
+	& p {
+		z-index: 1;
+		position: absolute;
+		left: 55px;
+		right: 55px;
+		text-align:center;
+		line-height:20px;
+		&.congrats {
+			top: 65%;
+			font-weight:bold;
+			font-size:22px;
+		}
+		&.hashtag {
+			top: 100%;
+		}
+		& strong {
+			font-weight:bold;
+		}
+	}
+	& img {
+		position:absolute;
+		z-index:0;
+	}
+}
+.name_form {
+	position:fixed;
+	z-index:1000;
+	width:700px;
+	height:50px;
+	top:35vh;
+	left:46vw;
+	& input {
+		font-family:'Press Start 2P';
+		position: absolute;
+		height: 100%;
+		width: 67%;
+		font-size:120%;
+		padding:3px 0 0 20px;
+		font-weight:bold;
+		background:transparent;
+		outline: 0;
+		border: 0;
+	}
+}

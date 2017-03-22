@@ -1,0 +1,20 @@
+<div class="score-tables">
+  <h1>Player Scores</h1>
+  <div ng-repeat="score in scores | groupBy: 'date' | toArray:true | orderBy:reverse">
+    <h3>{{score.$key}}</h3>
+    <table>
+      <tr>
+        <th>Player</th>
+        <th>Score</th>
+        <th>Time</th>
+        <th>Delete</th>
+      </tr>
+      <tr ng-repeat="player in score track by $index">
+        <td>{{player.name}}</td>
+        <td>{{player.score}}</td>
+        <td>{{player.time}}</td>
+        <td ng-click="delete(player, $index)">X</td>
+      </tr>
+    </table>
+  </div>
+</div>
